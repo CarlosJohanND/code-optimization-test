@@ -1,5 +1,6 @@
 public class Store {
     public static void main(String[] args) {
+        /*No entendi que era cada dato :( */
         int p1 = 15;
         int p2 = 10;
         int p3 = 5;
