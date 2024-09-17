@@ -1,20 +1,27 @@
 public class Store {
     public static void main(String[] args) {
-        /*No entendi que era cada dato :( */
-        int p1 = 15;
-        int p2 = 10;
-        int p3 = 5;
 
-        int total1 = p1 * 2;
-        int total2 = p2 * 3;
-        int total3 = p3 * 4;
+        /*Usamos arrays de constantes pera almacenar los precios, las cantidades de los productos y los totales */
+        final int precio[] = {15, 10, 5};
+        final int amount[] = {2, 3, 4};
+        final int total[] = new int[3];
+        /*Creamos una constante para revisar si las ventas fueron suficientes*/
+        final int salescheck = 50;
 
-        int totalSales = total1 + total2 + total3;
+        int totalSales = 0;
 
-        if (totalSales > 50) {
-            System.out.println("Good sales performance");
+        /*usamos un bucle  para calcular el total de las ventas usando los arrays que creamos */
+        for (int i = 0; i < 3; i++){
+            total[i] = precio[i] * amount[i];
+            /*acumulamos el resultado de los totales en la variante totalSales */
+            totalSales += total[i];
+        }
+
+        /*usamos condicionales y la constante salescheck para revisar si nuestras ventas fueron buenas o bajas */
+        if (totalSales > salescheck) {
+            System.out.println("Good sales performance: " + totalSales);
         } else {
-            System.out.println("Low sales performance");
+            System.out.println("Low sales performance: " + totalSales);
         }
     }
 }
